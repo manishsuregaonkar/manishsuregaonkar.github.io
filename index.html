@@ -1,12 +1,17 @@
  <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Manish Shanmukh Suregaonkar | Portfolio</title>
+    <title>Manish Shanmukh Suregaonkar | Developer Portfolio</title>
+
+    <meta name="description"
+        content="Portfolio of Manish Shanmukh Suregaonkar, a Computer Science and Information Technology student interested in software development, programming and emerging technologies.">
 
     <style>
+
         * {
             margin: 0;
             padding: 0;
@@ -14,359 +19,826 @@
             scroll-behavior: smooth;
         }
 
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            background: #050816;
-            color: #ffffff;
-            line-height: 1.6;
+        :root {
+            --bg: #050816;
+            --bg2: #080d1c;
+            --card: #0b1225;
+            --card2: #0e1730;
+            --blue: #3b82f6;
+            --cyan: #22d3ee;
+            --text: #f8fafc;
+            --muted: #94a3b8;
+            --border: #1e3157;
         }
 
-        /* NAVBAR */
+        body {
+            font-family: "Segoe UI", Arial, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* ================= NAVBAR ================= */
+
         nav {
             position: fixed;
             top: 0;
+            left: 0;
             width: 100%;
-            background: rgba(5, 8, 22, 0.95);
-            padding: 18px 8%;
+            height: 75px;
+
             display: flex;
-            justify-content: space-between;
             align-items: center;
+            justify-content: space-between;
+
+            padding: 0 8%;
+
+            background: rgba(5, 8, 22, 0.88);
+            backdrop-filter: blur(15px);
+
+            border-bottom: 1px solid rgba(59, 130, 246, 0.15);
+
             z-index: 1000;
-            border-bottom: 1px solid #18213d;
         }
 
         .logo {
-            font-size: 24px;
-            font-weight: bold;
-            color: #3b82f6;
+            font-size: 25px;
+            font-weight: 800;
+            color: var(--blue);
+        }
+
+        .logo span {
+            color: var(--cyan);
         }
 
         nav ul {
             display: flex;
-            list-style: none;
             gap: 30px;
+            list-style: none;
         }
 
         nav ul li a {
-            color: white;
-            text-decoration: none;
+            color: #dbeafe;
             font-size: 15px;
             transition: 0.3s;
         }
 
         nav ul li a:hover {
-            color: #3b82f6;
+            color: var(--cyan);
         }
 
-        /* GENERAL */
+        /* ================= GENERAL ================= */
+
         section {
-            padding: 100px 8%;
+            padding: 110px 8%;
         }
 
         .container {
-            max-width: 1100px;
+            max-width: 1150px;
             margin: auto;
+        }
+
+        .section-label {
+            text-align: center;
+            color: var(--cyan);
+            font-family: monospace;
+            font-size: 14px;
+            margin-bottom: 10px;
         }
 
         .section-title {
             text-align: center;
-            font-size: 35px;
-            margin-bottom: 50px;
+            font-size: 38px;
+            margin-bottom: 55px;
         }
 
         .section-title span {
-            color: #3b82f6;
+            color: var(--blue);
         }
 
-        /* HERO */
+        /* ================= HERO ================= */
+
         .hero {
             min-height: 100vh;
+
             display: flex;
             align-items: center;
-            padding-top: 120px;
+
+            position: relative;
+
+            padding-top: 130px;
+
+            background:
+                radial-gradient(circle at 75% 30%, rgba(37, 99, 235, 0.13), transparent 30%),
+                radial-gradient(circle at 20% 70%, rgba(34, 211, 238, 0.06), transparent 30%);
         }
 
-        .hero-content {
-            max-width: 750px;
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.4fr 0.8fr;
+            gap: 70px;
+            align-items: center;
         }
 
-        .hero h1 {
-            font-size: 58px;
-            line-height: 1.1;
-            margin-bottom: 15px;
-        }
+        .terminal-tag {
+            display: inline-block;
 
-        .hero h1 span {
-            color: #3b82f6;
-        }
+            font-family: monospace;
 
-        .hero h2 {
-            font-size: 25px;
-            color: #b8c2d9;
+            color: var(--cyan);
+
+            background: rgba(34, 211, 238, 0.06);
+
+            border: 1px solid rgba(34, 211, 238, 0.25);
+
+            padding: 8px 15px;
+
+            border-radius: 6px;
+
             margin-bottom: 20px;
         }
 
-        .hero p {
-            color: #9da8c0;
+        .hero h1 {
+            font-size: clamp(45px, 6vw, 75px);
+            line-height: 1.05;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 span {
+            color: var(--blue);
+
+            text-shadow:
+                0 0 25px rgba(59, 130, 246, 0.35);
+        }
+
+        .hero h2 {
+            color: #cbd5e1;
+            font-size: 23px;
+            margin-bottom: 20px;
+        }
+
+        .hero-description {
+            color: var(--muted);
             font-size: 17px;
-            max-width: 650px;
+            max-width: 700px;
             margin-bottom: 30px;
         }
 
-        .buttons {
+        .hero-buttons {
             display: flex;
             gap: 15px;
             flex-wrap: wrap;
         }
 
         .btn {
-            display: inline-block;
-            padding: 13px 25px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: bold;
+            padding: 13px 22px;
+
+            border-radius: 7px;
+
+            font-weight: 700;
+
             transition: 0.3s;
+
+            display: inline-block;
         }
 
-        .primary {
-            background: #2563eb;
+        .btn-primary {
+            background: var(--blue);
             color: white;
+
+            box-shadow:
+                0 0 25px rgba(59, 130, 246, 0.2);
         }
 
-        .primary:hover {
-            background: #1d4ed8;
-            transform: translateY(-3px);
+        .btn-primary:hover {
+            transform: translateY(-4px);
+            background: #2563eb;
+
+            box-shadow:
+                0 0 35px rgba(59, 130, 246, 0.4);
         }
 
-        .secondary {
-            border: 1px solid #2563eb;
+        .btn-outline {
+            border: 1px solid #315a9b;
+            color: #93c5fd;
+        }
+
+        .btn-outline:hover {
+            border-color: var(--cyan);
+            color: var(--cyan);
+            transform: translateY(-4px);
+        }
+
+        /* ================= CODE TERMINAL ================= */
+
+        .terminal {
+            background: #070b17;
+
+            border: 1px solid #20355e;
+
+            border-radius: 12px;
+
+            overflow: hidden;
+
+            box-shadow:
+                0 0 50px rgba(37, 99, 235, 0.12);
+        }
+
+        .terminal-header {
+            height: 40px;
+
+            display: flex;
+            align-items: center;
+
+            gap: 7px;
+
+            padding: 0 15px;
+
+            background: #0c1325;
+
+            border-bottom: 1px solid #1c2d4c;
+        }
+
+        .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #334155;
+        }
+
+        .terminal-body {
+            padding: 25px;
+
+            font-family: Consolas, monospace;
+
+            font-size: 14px;
+
+            color: #94a3b8;
+        }
+
+        .terminal-body .blue {
             color: #60a5fa;
         }
 
-        .secondary:hover {
-            background: #2563eb;
-            color: white;
-            transform: translateY(-3px);
+        .terminal-body .cyan {
+            color: #22d3ee;
         }
 
-        /* ABOUT */
+        .terminal-body .green {
+            color: #4ade80;
+        }
+
+        /* ================= ABOUT ================= */
+
         .about {
-            background: #080d20;
+            background: var(--bg2);
         }
 
-        .about-content {
+        .about-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
-            align-items: center;
+
+            grid-template-columns: 1.3fr 0.7fr;
+
+            gap: 40px;
         }
 
-        .about-text p {
-            color: #aab4ca;
-            margin-bottom: 15px;
+        .about-text {
+            color: var(--muted);
             font-size: 16px;
         }
 
-        .education-card {
-            background: #0d142b;
+        .about-text p {
+            margin-bottom: 18px;
+        }
+
+        .info-card {
+            background: var(--card);
+
+            border: 1px solid var(--border);
+
             padding: 30px;
-            border-radius: 15px;
-            border: 1px solid #1d2b4f;
-        }
 
-        .education-card h3 {
-            color: #60a5fa;
-            margin-bottom: 10px;
-        }
+            border-radius: 12px;
 
-        .education-card p {
-            color: #b5bfd3;
-        }
-
-        /* SKILLS */
-        .skills-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 15px;
-        }
-
-        .skill {
-            background: #0d142b;
-            border: 1px solid #1e3a68;
-            padding: 15px 25px;
-            border-radius: 10px;
-            color: #cbd5e1;
             transition: 0.3s;
         }
 
-        .skill:hover {
-            border-color: #3b82f6;
+        .info-card:hover {
+            border-color: var(--blue);
+
             transform: translateY(-5px);
-            color: #60a5fa;
         }
 
-        /* PROJECTS */
-        .projects {
-            background: #080d20;
+        .info-item {
+            margin-bottom: 20px;
         }
+
+        .info-item small {
+            color: var(--cyan);
+
+            font-family: monospace;
+        }
+
+        .info-item p {
+            color: #dbeafe;
+            margin-top: 4px;
+        }
+
+        /* ================= SKILLS ================= */
+
+        .skill-groups {
+            display: grid;
+
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 25px;
+        }
+
+        .skill-card {
+            background: var(--card);
+
+            border: 1px solid var(--border);
+
+            padding: 28px;
+
+            border-radius: 12px;
+
+            transition: 0.3s;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-7px);
+
+            border-color: var(--cyan);
+
+            box-shadow:
+                0 10px 40px rgba(34, 211, 238, 0.06);
+        }
+
+        .skill-card h3 {
+            color: #60a5fa;
+
+            margin-bottom: 18px;
+        }
+
+        .skill-list {
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 9px;
+        }
+
+        .skill {
+            padding: 7px 11px;
+
+            background: #101a32;
+
+            border: 1px solid #233a64;
+
+            border-radius: 5px;
+
+            color: #cbd5e1;
+
+            font-size: 13px;
+        }
+
+        /* ================= PROFILE CARDS ================= */
+
+        .profiles {
+            background: var(--bg2);
+        }
+
+        .profile-grid {
+            display: grid;
+
+            grid-template-columns: repeat(4, 1fr);
+
+            gap: 20px;
+        }
+
+        .profile-card {
+            background: var(--card);
+
+            border: 1px solid var(--border);
+
+            padding: 28px 22px;
+
+            border-radius: 12px;
+
+            transition: 0.3s;
+
+            text-align: center;
+        }
+
+        .profile-card:hover {
+            transform: translateY(-8px);
+
+            border-color: var(--blue);
+
+            box-shadow:
+                0 15px 40px rgba(59, 130, 246, 0.08);
+        }
+
+        .profile-icon {
+            width: 55px;
+            height: 55px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            margin: auto auto 18px;
+
+            border-radius: 12px;
+
+            background: #101c38;
+
+            color: var(--cyan);
+
+            font-size: 23px;
+
+            font-weight: bold;
+        }
+
+        .profile-card h3 {
+            margin-bottom: 10px;
+        }
+
+        .profile-card p {
+            color: var(--muted);
+
+            font-size: 13px;
+
+            margin-bottom: 20px;
+        }
+
+        .profile-btn {
+            display: inline-block;
+
+            color: #60a5fa;
+
+            font-size: 14px;
+
+            border: 1px solid #294b7d;
+
+            padding: 8px 15px;
+
+            border-radius: 6px;
+
+            transition: 0.3s;
+        }
+
+        .profile-btn:hover {
+            background: var(--blue);
+
+            color: white;
+        }
+
+        /* ================= PROJECTS ================= */
 
         .project-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+
+            grid-template-columns: repeat(2, 1fr);
+
             gap: 25px;
         }
 
         .project-card {
-            background: #0d142b;
-            border: 1px solid #1d2b4f;
-            border-radius: 15px;
-            padding: 28px;
+            background: var(--card);
+
+            border: 1px solid var(--border);
+
+            padding: 30px;
+
+            border-radius: 12px;
+
             transition: 0.3s;
         }
 
         .project-card:hover {
-            transform: translateY(-8px);
-            border-color: #3b82f6;
+            transform: translateY(-7px);
+
+            border-color: var(--blue);
+        }
+
+        .project-number {
+            color: var(--cyan);
+
+            font-family: monospace;
+
+            font-size: 13px;
+
+            margin-bottom: 12px;
         }
 
         .project-card h3 {
-            color: #60a5fa;
-            margin-bottom: 15px;
+            font-size: 22px;
+
+            color: #dbeafe;
+
+            margin-bottom: 12px;
         }
 
         .project-card p {
-            color: #aab4ca;
+            color: var(--muted);
+
             margin-bottom: 20px;
         }
 
-        .project-link {
-            color: #60a5fa;
-            text-decoration: none;
-            font-weight: bold;
+        .project-tech {
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 8px;
+
+            margin-bottom: 20px;
         }
 
-        .project-link:hover {
-            text-decoration: underline;
+        .tech {
+            font-family: monospace;
+
+            font-size: 12px;
+
+            color: var(--cyan);
+
+            background: #09182b;
+
+            border: 1px solid #164e63;
+
+            padding: 5px 9px;
+
+            border-radius: 4px;
         }
 
-        /* GOAL */
-        .goal-card {
-            max-width: 850px;
+        /* ================= EDUCATION ================= */
+
+        .education {
+            background: var(--bg2);
+        }
+
+        .timeline {
+            max-width: 800px;
+
             margin: auto;
-            text-align: center;
-            background: #0d142b;
-            padding: 40px;
-            border-radius: 15px;
-            border: 1px solid #1d2b4f;
+
+            border-left: 2px solid #234575;
+
+            padding-left: 30px;
         }
 
-        .goal-card p {
-            color: #aab4ca;
-            font-size: 17px;
-        }
+        .timeline-card {
+            position: relative;
 
-        /* CONTACT */
-        .contact {
-            background: #080d20;
-            text-align: center;
-        }
+            background: var(--card);
 
-        .contact p {
-            color: #aab4ca;
+            border: 1px solid var(--border);
+
+            padding: 25px;
+
+            border-radius: 10px;
+
             margin-bottom: 25px;
         }
 
-        .social-links {
+        .timeline-card::before {
+            content: "";
+
+            position: absolute;
+
+            width: 11px;
+            height: 11px;
+
+            border-radius: 50%;
+
+            background: var(--cyan);
+
+            left: -37px;
+
+            top: 30px;
+
+            box-shadow:
+                0 0 15px var(--cyan);
+        }
+
+        .timeline-card small {
+            color: var(--cyan);
+
+            font-family: monospace;
+        }
+
+        .timeline-card h3 {
+            margin: 5px 0;
+        }
+
+        .timeline-card p {
+            color: var(--muted);
+        }
+
+        /* ================= GOAL ================= */
+
+        .goal-box {
+            max-width: 900px;
+
+            margin: auto;
+
+            padding: 45px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(37, 99, 235, 0.10),
+                    rgba(34, 211, 238, 0.04)
+                );
+
+            border: 1px solid #234575;
+
+            border-radius: 15px;
+
+            text-align: center;
+        }
+
+        .goal-box p {
+            color: #aab8cd;
+
+            font-size: 17px;
+        }
+
+        /* ================= CONTACT ================= */
+
+        .contact {
+            background: var(--bg2);
+
+            text-align: center;
+        }
+
+        .contact-text {
+            color: var(--muted);
+
+            max-width: 600px;
+
+            margin: 0 auto 30px;
+        }
+
+        .contact-links {
             display: flex;
+
             justify-content: center;
+
             flex-wrap: wrap;
+
             gap: 15px;
         }
 
-        .social-links a {
-            text-decoration: none;
-            padding: 13px 25px;
-            border-radius: 8px;
-            border: 1px solid #2563eb;
-            color: #60a5fa;
+        .contact-links a {
+            border: 1px solid #294b7d;
+
+            padding: 12px 22px;
+
+            border-radius: 7px;
+
+            color: #93c5fd;
+
             transition: 0.3s;
         }
 
-        .social-links a:hover {
-            background: #2563eb;
+        .contact-links a:hover {
+            background: var(--blue);
+
             color: white;
+
+            transform: translateY(-3px);
         }
 
-        /* FOOTER */
+        /* ================= FOOTER ================= */
+
         footer {
             text-align: center;
+
             padding: 25px;
-            border-top: 1px solid #18213d;
-            color: #74809a;
+
+            border-top: 1px solid #182a49;
+
+            color: #64748b;
+
+            font-size: 14px;
         }
 
-        /* MOBILE */
-        @media (max-width: 800px) {
+        /* ================= RESPONSIVE ================= */
 
-            nav {
-                padding: 15px 5%;
-            }
+        @media(max-width: 900px) {
 
-            nav ul {
-                gap: 12px;
-            }
-
-            nav ul li a {
-                font-size: 12px;
-            }
-
-            .hero h1 {
-                font-size: 40px;
-            }
-
-            .hero h2 {
-                font-size: 20px;
-            }
-
-            .about-content {
+            .hero-grid,
+            .about-grid {
                 grid-template-columns: 1fr;
+            }
+
+            .skill-groups {
+                grid-template-columns: 1fr;
+            }
+
+            .profile-grid {
+                grid-template-columns: repeat(2, 1fr);
             }
 
             .project-grid {
                 grid-template-columns: 1fr;
             }
 
-            section {
-                padding: 80px 5%;
+        }
+
+        @media(max-width: 600px) {
+
+            nav {
+                padding: 0 5%;
             }
 
-            .section-title {
-                font-size: 30px;
+            nav ul {
+                display: none;
             }
+
+            section {
+                padding: 90px 5%;
+            }
+
+            .profile-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 45px;
+            }
+
         }
+
     </style>
+
 </head>
+
 
 <body>
 
-    <!-- NAVIGATION -->
-    <nav>
-        <div class="logo">Manish.</div>
 
-        <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
+<!-- ================= NAVBAR ================= -->
+
+<nav>
+
+    <div class="logo">
+        Manish<span>.</span>
+    </div>
+
+    <ul>
+
+        <li>
+            <a href="#home">Home</a>
+        </li>
+
+        <li>
+            <a href="#about">About</a>
+        </li>
+
+        <li>
+            <a href="#skills">Skills</a>
+        </li>
+
+        <li>
+            <a href="#profiles">Profiles</a>
+        </li>
+
+        <li>
+            <a href="#projects">Projects</a>
+        </li>
+
+        <li>
+            <a href="#contact">Contact</a>
+        </li>
+
+    </ul>
+
+</nav>
 
 
-    <!-- HERO -->
-    <section class="hero" id="home">
-        <div class="container hero-content">
+
+<!-- ================= HERO ================= -->
+
+<section class="hero" id="home">
+
+    <div class="container hero-grid">
+
+        <div>
+
+            <div class="terminal-tag">
+                &lt;developer /&gt;
+            </div>
 
             <h1>
                 Hi, I'm <span>Manish</span>
@@ -376,290 +848,832 @@
                 Computer Science & Information Technology Student
             </h2>
 
-            <p>
-                I'm a 3rd-semester B.Tech student at REVA University,
-                passionate about programming, software development,
-                problem solving and learning new technologies.
+            <p class="hero-description">
+
+                I'm a 3rd-semester B.Tech student at REVA University
+                with a strong interest in programming, software
+                development, problem solving, artificial intelligence
+                and building practical technology solutions.
+
             </p>
 
-            <div class="buttons">
+            <div class="hero-buttons">
 
                 <a
                     href="https://github.com/manishsuregaonkar"
                     target="_blank"
-                    class="btn primary">
+                    class="btn btn-primary">
                     GitHub
                 </a>
 
                 <a
                     href="https://www.linkedin.com/in/manish-suregaonkar/"
                     target="_blank"
-                    class="btn secondary">
+                    class="btn btn-outline">
                     LinkedIn
                 </a>
 
                 <a
-                    href="https://leetcode.com/u/Manish_Shanmukh/"
-                    target="_blank"
-                    class="btn secondary">
-                    LeetCode
+                    href="#profiles"
+                    class="btn btn-outline">
+                    Coding Profiles
                 </a>
 
             </div>
 
         </div>
-    </section>
 
 
-    <!-- ABOUT -->
-    <section class="about" id="about">
+        <!-- TERMINAL -->
 
-        <div class="container">
+        <div class="terminal">
 
-            <h2 class="section-title">
-                About <span>Me</span>
-            </h2>
+            <div class="terminal-header">
 
-            <div class="about-content">
-
-                <div class="about-text">
-
-                    <p>
-                        I am Manish Shanmukh Suregaonkar, a B.Tech
-                        Computer Science and Information Technology
-                        student at REVA University, Bengaluru.
-                    </p>
-
-                    <p>
-                        I enjoy programming, solving coding problems,
-                        building applications and exploring modern
-                        technologies such as Artificial Intelligence.
-                    </p>
-
-                    <p>
-                        I believe in learning by building practical
-                        projects and continuously improving my
-                        technical and problem-solving skills.
-                    </p>
-
-                </div>
-
-                <div class="education-card">
-
-                    <h3>Education</h3>
-
-                    <p>
-                        <strong>B.Tech – Computer Science and
-                        Information Technology</strong>
-                    </p>
-
-                    <p>REVA University, Bengaluru</p>
-
-                    <p>2025 – 2029</p>
-
-                    <br>
-
-                    <h3>Current Status</h3>
-
-                    <p>3rd Semester B.Tech Student</p>
-
-                </div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
 
             </div>
 
-        </div>
-
-    </section>
-
-
-    <!-- SKILLS -->
-    <section id="skills">
-
-        <div class="container">
-
-            <h2 class="section-title">
-                My <span>Skills</span>
-            </h2>
-
-            <div class="skills-container">
-
-                <div class="skill">C Programming</div>
-                <div class="skill">Python</div>
-                <div class="skill">HTML</div>
-                <div class="skill">CSS</div>
-                <div class="skill">Git</div>
-                <div class="skill">GitHub</div>
-                <div class="skill">Problem Solving</div>
-                <div class="skill">Data Structures</div>
-                <div class="skill">Flutter</div>
-                <div class="skill">Firebase</div>
-                <div class="skill">AI</div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- PROJECTS -->
-    <section class="projects" id="projects">
-
-        <div class="container">
-
-            <h2 class="section-title">
-                My <span>Projects</span>
-            </h2>
-
-            <div class="project-grid">
-
-                <!-- PROJECT 1 -->
-                <div class="project-card">
-
-                    <h3>Hello World Repository</h3>
-
-                    <p>
-                        My first GitHub project created while learning
-                        Git and GitHub. It helped me understand
-                        repositories, commits and version control.
-                    </p>
-
-                    <a
-                        href="https://github.com/manishsuregaonkar"
-                        target="_blank"
-                        class="project-link">
-                        View on GitHub →
-                    </a>
-
-                </div>
-
-
-                <!-- PROJECT 2 -->
-                <div class="project-card">
-
-                    <h3>LeetCode Practice</h3>
-
-                    <p>
-                        A collection of my coding practice and
-                        problem-solving journey. I use programming
-                        challenges to improve my logical thinking.
-                    </p>
-
-                    <a
-                        href="https://leetcode.com/u/Manish_Shanmukh/"
-                        target="_blank"
-                        class="project-link">
-                        View LeetCode →
-                    </a>
-
-                </div>
-
-
-                <!-- PROJECT 3 -->
-                <div class="project-card">
-
-                    <h3>Artisan Marketplace</h3>
-
-                    <p>
-                        A Flutter-based marketplace concept for
-                        marginalized artisans. The project explores
-                        Flutter, Firebase and AI-assisted product
-                        cataloging.
-                    </p>
-
-                    <a
-                        href="https://github.com/mallikarjunkamatagi007-cpu/kalasetu"
-                        target="_blank"
-                        class="project-link">
-                        View Project →
-                    </a>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- CAREER GOAL -->
-    <section id="goal">
-
-        <div class="container">
-
-            <h2 class="section-title">
-                Career <span>Goal</span>
-            </h2>
-
-            <div class="goal-card">
+            <div class="terminal-body">
 
                 <p>
-                    My goal is to become a skilled software developer
-                    with strong programming fundamentals and practical
-                    development experience. I want to build real-world
-                    applications, improve my problem-solving abilities,
-                    learn modern technologies and contribute to
-                    meaningful software projects.
+                    <span class="blue">const</span>
+                    developer = {
+                </p>
+
+                <p>
+                    &nbsp;&nbsp;name:
+                    <span class="green">
+                        "Manish Shanmukh Suregaonkar"
+                    </span>,
+                </p>
+
+                <p>
+                    &nbsp;&nbsp;education:
+                    <span class="green">
+                        "B.Tech CS & IT"
+                    </span>,
+                </p>
+
+                <p>
+                    &nbsp;&nbsp;university:
+                    <span class="green">
+                        "REVA University"
+                    </span>,
+                </p>
+
+                <p>
+                    &nbsp;&nbsp;semester:
+                    <span class="green">
+                        "3rd Semester"
+                    </span>,
+                </p>
+
+                <p>
+                    &nbsp;&nbsp;focus:
+                    <span class="green">
+                        "Software Development"
+                    </span>,
+                </p>
+
+                <p>
+                    &nbsp;&nbsp;learning:
+                    [
+                    <span class="cyan">
+                        "C", "Python", "Flutter", "AI"
+                    </span>
+                    ]
+                </p>
+
+                <p>};</p>
+
+                <br>
+
+                <p>
+                    <span class="blue">status</span>:
+                    <span class="green">
+                        "Learning & Building..."
+                    </span>
                 </p>
 
             </div>
 
         </div>
 
-    </section>
+    </div>
+
+</section>
 
 
-    <!-- CONTACT -->
-    <section class="contact" id="contact">
 
-        <div class="container">
+<!-- ================= ABOUT ================= -->
 
-            <h2 class="section-title">
-                Let's <span>Connect</span>
-            </h2>
+<section class="about" id="about">
 
-            <p>
-                You can find my coding projects and professional
-                profile through the links below.
-            </p>
+    <div class="container">
 
-            <div class="social-links">
+        <div class="section-label">
+            01 / ABOUT
+        </div>
+
+        <h2 class="section-title">
+            About <span>Me</span>
+        </h2>
+
+
+        <div class="about-grid">
+
+            <div class="about-text">
+
+                <p>
+                    I am <strong>Manish Shanmukh Suregaonkar</strong>,
+                    a Computer Science and Information Technology
+                    student pursuing my B.Tech at REVA University,
+                    Bengaluru.
+                </p>
+
+                <p>
+                    My primary interest is in software development
+                    and programming. I enjoy understanding how
+                    applications work, solving programming problems,
+                    experimenting with new technologies and turning
+                    ideas into working projects.
+                </p>
+
+                <p>
+                    I am currently strengthening my fundamentals in
+                    C programming, Python, data structures, algorithms,
+                    web development and software engineering practices.
+                </p>
+
+                <p>
+                    Along with academics, I actively use coding
+                    platforms such as GitHub, LeetCode and HackerRank
+                    to document my learning and improve my
+                    problem-solving abilities.
+                </p>
+
+                <p>
+                    I am also interested in emerging technologies,
+                    particularly Artificial Intelligence, Flutter
+                    application development and Firebase-based
+                    applications.
+                </p>
+
+            </div>
+
+
+            <div class="info-card">
+
+                <div class="info-item">
+
+                    <small>NAME</small>
+
+                    <p>
+                        Manish Shanmukh Suregaonkar
+                    </p>
+
+                </div>
+
+
+                <div class="info-item">
+
+                    <small>DEGREE</small>
+
+                    <p>
+                        B.Tech — Computer Science & IT
+                    </p>
+
+                </div>
+
+
+                <div class="info-item">
+
+                    <small>UNIVERSITY</small>
+
+                    <p>
+                        REVA University
+                    </p>
+
+                </div>
+
+
+                <div class="info-item">
+
+                    <small>CURRENT LEVEL</small>
+
+                    <p>
+                        3rd Semester
+                    </p>
+
+                </div>
+
+
+                <div class="info-item">
+
+                    <small>INTERESTS</small>
+
+                    <p>
+                        Programming • AI • Software Development
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= SKILLS ================= -->
+
+<section id="skills">
+
+    <div class="container">
+
+        <div class="section-label">
+            02 / TECHNOLOGY
+        </div>
+
+        <h2 class="section-title">
+            Technical <span>Skills</span>
+        </h2>
+
+
+        <div class="skill-groups">
+
+
+            <div class="skill-card">
+
+                <h3>Programming</h3>
+
+                <div class="skill-list">
+
+                    <span class="skill">C</span>
+
+                    <span class="skill">Python</span>
+
+                    <span class="skill">Problem Solving</span>
+
+                    <span class="skill">Algorithms</span>
+
+                    <span class="skill">Data Structures</span>
+
+                </div>
+
+            </div>
+
+
+            <div class="skill-card">
+
+                <h3>Web & Development</h3>
+
+                <div class="skill-list">
+
+                    <span class="skill">HTML</span>
+
+                    <span class="skill">CSS</span>
+
+                    <span class="skill">Git</span>
+
+                    <span class="skill">GitHub</span>
+
+                    <span class="skill">Flutter</span>
+
+                    <span class="skill">Firebase</span>
+
+                </div>
+
+            </div>
+
+
+            <div class="skill-card">
+
+                <h3>Emerging Technologies</h3>
+
+                <div class="skill-list">
+
+                    <span class="skill">Artificial Intelligence</span>
+
+                    <span class="skill">AI-assisted Development</span>
+
+                    <span class="skill">Cloud Concepts</span>
+
+                    <span class="skill">Mobile Development</span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= PROFILES ================= -->
+
+<section class="profiles" id="profiles">
+
+    <div class="container">
+
+        <div class="section-label">
+            03 / DIGITAL PRESENCE
+        </div>
+
+        <h2 class="section-title">
+            My <span>Developer Profiles</span>
+        </h2>
+
+
+        <div class="profile-grid">
+
+
+            <!-- GITHUB -->
+
+            <div class="profile-card">
+
+                <div class="profile-icon">
+                    GH
+                </div>
+
+                <h3>GitHub</h3>
+
+                <p>
+                    My development workspace where I maintain
+                    repositories, projects, experiments and
+                    programming work.
+                </p>
 
                 <a
                     href="https://github.com/manishsuregaonkar"
-                    target="_blank">
-                    GitHub
+                    target="_blank"
+                    class="profile-btn">
+
+                    View GitHub →
+
                 </a>
+
+            </div>
+
+
+            <!-- LINKEDIN -->
+
+            <div class="profile-card">
+
+                <div class="profile-icon">
+                    in
+                </div>
+
+                <h3>LinkedIn</h3>
+
+                <p>
+                    My professional profile where I showcase
+                    my education, technical interests,
+                    achievements and professional journey.
+                </p>
 
                 <a
                     href="https://www.linkedin.com/in/manish-suregaonkar/"
-                    target="_blank">
-                    LinkedIn
+                    target="_blank"
+                    class="profile-btn">
+
+                    View LinkedIn →
+
                 </a>
+
+            </div>
+
+
+            <!-- LEETCODE -->
+
+            <div class="profile-card">
+
+                <div class="profile-icon">
+                    LC
+                </div>
+
+                <h3>LeetCode</h3>
+
+                <p>
+                    My coding practice profile focused on
+                    algorithmic thinking, problem solving and
+                    improving programming fundamentals.
+                </p>
 
                 <a
                     href="https://leetcode.com/u/Manish_Shanmukh/"
-                    target="_blank">
-                    LeetCode
+                    target="_blank"
+                    class="profile-btn">
+
+                    View LeetCode →
+
+                </a>
+
+            </div>
+
+
+            <!-- HACKERRANK -->
+
+            <div class="profile-card">
+
+                <div class="profile-icon">
+                    HR
+                </div>
+
+                <h3>HackerRank</h3>
+
+                <p>
+                    A platform I use for programming practice,
+                    technical challenges and strengthening my
+                    problem-solving skills.
+                </p>
+
+                <!-- Replace # with your actual HackerRank URL -->
+
+                <a
+                    href="#"
+                    target="_blank"
+                    class="profile-btn">
+
+                    View HackerRank →
+
                 </a>
 
             </div>
 
         </div>
 
-    </section>
+    </div>
+
+</section>
 
 
-    <!-- FOOTER -->
-    <footer>
 
-        <p>
-            © 2026 Manish Shanmukh Suregaonkar.
-            Built with HTML & CSS.
+<!-- ================= PROJECTS ================= -->
+
+<section id="projects">
+
+    <div class="container">
+
+        <div class="section-label">
+            04 / PROJECTS
+        </div>
+
+        <h2 class="section-title">
+            What I've <span>Built</span>
+        </h2>
+
+
+        <div class="project-grid">
+
+
+            <div class="project-card">
+
+                <div class="project-number">
+                    PROJECT_01
+                </div>
+
+                <h3>Artisan Marketplace</h3>
+
+                <p>
+                    A Flutter-based marketplace concept designed
+                    to help marginalized artisans showcase and
+                    sell their products. The project explores
+                    AI-assisted product cataloging and digital
+                    marketplace functionality.
+                </p>
+
+                <div class="project-tech">
+
+                    <span class="tech">Flutter</span>
+
+                    <span class="tech">Firebase</span>
+
+                    <span class="tech">AI</span>
+
+                    <span class="tech">Dart</span>
+
+                </div>
+
+                <a
+                    href="https://github.com/mallikarjunkamatagi007-cpu/kalasetu"
+                    target="_blank"
+                    class="profile-btn">
+
+                    GitHub Repository →
+
+                </a>
+
+            </div>
+
+
+
+            <div class="project-card">
+
+                <div class="project-number">
+                    PROJECT_02
+                </div>
+
+                <h3>LeetCode Practice Portfolio</h3>
+
+                <p>
+                    A documented coding practice journey containing
+                    programming solutions and progress. The
+                    repository demonstrates consistent practice
+                    and development of logical problem-solving
+                    skills.
+                </p>
+
+                <div class="project-tech">
+
+                    <span class="tech">C</span>
+
+                    <span class="tech">Python</span>
+
+                    <span class="tech">Algorithms</span>
+
+                    <span class="tech">DSA</span>
+
+                </div>
+
+                <a
+                    href="https://github.com/manishsuregaonkar/HackerRank-3rdSem-Portfolio"
+                    target="_blank"
+                    class="profile-btn">
+
+                    View Repository →
+
+                </a>
+
+            </div>
+
+
+
+            <div class="project-card">
+
+                <div class="project-number">
+                    PROJECT_03
+                </div>
+
+                <h3>Developer Portfolio</h3>
+
+                <p>
+                    A personal portfolio website created to present
+                    my education, skills, coding profiles,
+                    projects and professional development journey
+                    in one place.
+                </p>
+
+                <div class="project-tech">
+
+                    <span class="tech">HTML</span>
+
+                    <span class="tech">CSS</span>
+
+                    <span class="tech">GitHub Pages</span>
+
+                </div>
+
+                <a
+                    href="https://github.com/manishsuregaonkar"
+                    target="_blank"
+                    class="profile-btn">
+
+                    GitHub →
+
+                </a>
+
+            </div>
+
+
+
+            <div class="project-card">
+
+                <div class="project-number">
+                    PROJECT_04
+                </div>
+
+                <h3>Programming Practice</h3>
+
+                <p>
+                    Academic and personal programming exercises
+                    covering C programming, algorithms, data
+                    structures and logical problem solving.
+                </p>
+
+                <div class="project-tech">
+
+                    <span class="tech">C</span>
+
+                    <span class="tech">Python</span>
+
+                    <span class="tech">DSA</span>
+
+                    <span class="tech">Problem Solving</span>
+
+                </div>
+
+                <a
+                    href="https://github.com/manishsuregaonkar"
+                    target="_blank"
+                    class="profile-btn">
+
+                    Explore GitHub →
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= EDUCATION ================= -->
+
+<section class="education">
+
+    <div class="container">
+
+        <div class="section-label">
+            05 / EDUCATION
+        </div>
+
+        <h2 class="section-title">
+            Academic <span>Journey</span>
+        </h2>
+
+
+        <div class="timeline">
+
+            <div class="timeline-card">
+
+                <small>2025 — 2029</small>
+
+                <h3>
+                    B.Tech — Computer Science & Information Technology
+                </h3>
+
+                <p>
+                    REVA University, Bengaluru
+                </p>
+
+                <p>
+                    Currently pursuing my undergraduate degree
+                    and developing a strong foundation in computer
+                    science and software development.
+                </p>
+
+            </div>
+
+
+            <div class="timeline-card">
+
+                <small>CURRENT FOCUS</small>
+
+                <h3>
+                    Programming & Software Development
+                </h3>
+
+                <p>
+                    Currently focusing on programming fundamentals,
+                    problem solving, data structures, development
+                    projects and modern technologies.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= CAREER GOAL ================= -->
+
+<section>
+
+    <div class="container">
+
+        <div class="section-label">
+            06 / FUTURE
+        </div>
+
+        <h2 class="section-title">
+            Career <span>Goal</span>
+        </h2>
+
+
+        <div class="goal-box">
+
+            <p>
+
+                My goal is to become a skilled software developer
+                with strong programming fundamentals and practical
+                development experience. I want to continuously
+                improve my problem-solving abilities, build
+                real-world applications, explore emerging
+                technologies and contribute to meaningful software
+                projects.
+
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= CONTACT ================= -->
+
+<section class="contact" id="contact">
+
+    <div class="container">
+
+        <div class="section-label">
+            07 / CONNECT
+        </div>
+
+        <h2 class="section-title">
+            Let's <span>Connect</span>
+        </h2>
+
+        <p class="contact-text">
+
+            I'm always interested in learning, collaborating
+            on projects and connecting with other students,
+            developers and technology enthusiasts.
+
         </p>
 
-    </footer>
+
+        <div class="contact-links">
+
+            <a
+                href="https://github.com/manishsuregaonkar"
+                target="_blank">
+                GitHub
+            </a>
+
+            <a
+                href="https://www.linkedin.com/in/manish-suregaonkar/"
+                target="_blank">
+                LinkedIn
+            </a>
+
+            <a
+                href="https://leetcode.com/u/Manish_Shanmukh/"
+                target="_blank">
+                LeetCode
+            </a>
+
+            <!-- Replace # with your HackerRank URL -->
+
+            <a
+                href="#"
+                target="_blank">
+                HackerRank
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <p>
+        © 2026 Manish Shanmukh Suregaonkar
+    </p>
+
+    <p>
+        Built with HTML & CSS • Learning • Building • Growing
+    </p>
+
+</footer>
+
 
 </body>
+
 </html>
